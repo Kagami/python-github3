@@ -20,8 +20,8 @@ class TestJson(TestCase):
     json_ = '{"date_fake": "some_fake", "list": [1, 2, 3], "date_ok": "2008-01-14T04:33:35Z", "nested_dict": {"with_date": "2008-01-14T04:33:35Z"}}'
 
     def test_encoder(self):
-        to_json = json.dumps(self.dict_)
-        self.assertEquals(to_json, self.json_)
+        dict_ = json.loads(json.dumps(self.dict_))
+        self.assertEquals(self.dict_, dict_)
 
     def test_decoder(self):
         to_dict = json.loads(self.json_)

@@ -3,6 +3,8 @@
 
 import re
 
+import six
+
 from . import Request, ValidationError
 
 # Src: http://code.djangoproject.com/svn/django/trunk/django/core/validators.py
@@ -30,7 +32,7 @@ class Add(Request):
             raise ValidationError("'%s' request needs emails"
                                   % (self.__class__.__name__))
 
-        return filter(is_email, self.body)
+        return tuple(six.moves.filter(is_email, self.body))
 
 
 class Delete(Request):

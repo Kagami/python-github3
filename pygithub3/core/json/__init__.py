@@ -9,6 +9,8 @@ try:
 except ImportError:
     import json
 
+import six
+
 GITHUB_DATE_FORMAT = '%Y-%m-%dT%H:%M:%SZ'
 
 
@@ -21,7 +23,7 @@ class GHJSONEncoder(json.JSONEncoder):
 
 
 def gh_decoder_hook(dict_):
-    for k, v in dict_.iteritems():
+    for k, v in six.iteritems(dict_):
         try:
             date = datetime.strptime(v, GITHUB_DATE_FORMAT)
             dict_[k] = date
