@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
+import six
+
 from . import base
 from .link import Link
 
@@ -105,6 +107,6 @@ class Result(base.Result):
 
         :param int page: Page number
         """
-        if page in range(1, self.pages + 1):
+        if page in six.moves.range(1, self.pages + 1):
             return base.Page(self.getter, page)
         return None

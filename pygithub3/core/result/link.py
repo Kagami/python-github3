@@ -1,12 +1,7 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 
-try:
-    # Python 3
-    from urllib.parse import urlparse, parse_qs
-except ImportError:
-    from urlparse import urlparse, parse_qs
-
+from six.moves.urllib.parse import urlparse, parse_qs
 
 from pygithub3.core.third_libs.link_header import parse_link_value
 
