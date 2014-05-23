@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 __title__ = 'pygithub3'
-__version__ = '0.5.1'
+__version__ = '0.6.0'
 __author__ = 'David Medina'
 __email__ = 'davidmedina9@gmail.com'
 __license__ = 'ISC'
