@@ -14,11 +14,11 @@ except ImportError:
     pass
 
 setup(
-    name=pygithub3.__name__,
+    name='pygithub33',
     version=pygithub3.__version__,
     author=pygithub3.__author__,
     author_email=pygithub3.__email__,
-    url='https://github.com/copitux/python-github3',
+    url='https://github.com/Kagami/python-github3',
     description='Python wrapper for the github v3 api',
     long_description=open('README.rst').read(),
     license='ISC',
