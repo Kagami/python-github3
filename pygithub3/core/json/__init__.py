@@ -37,6 +37,13 @@ def dumps(obj, cls=GHJSONEncoder, **kwargs):
 
 
 def loads(s, object_hook=gh_decoder_hook, **kwargs):
+    if type(s) is six.binary_type:
+        # XXX(Kagami): json module from python3 can't load bytes while
+        # json from python2 can work with both str and unicode. Better
+        # to get only unicode in this function but let's go this hack
+        # for the time being. Seems like upstream bug:
+        # <https://bugs.python.org/issue10976>.
+        s = s.decode('utf-8')
     return json.loads(s, object_hook=object_hook, **kwargs)
 
 dump = json.dump
